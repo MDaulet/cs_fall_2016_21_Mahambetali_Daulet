@@ -181,7 +181,395 @@ $\triangleright\large\textsl{Can you find a picture for the correction factor?}\
 
 {The correction to 3.15$\times7.21$ was complicated as an absolute or additive change but simple as a fractional change.  This contrast is general.  Using the additive correction, a two-factor product becomes}\\
 
-{(x+$\Delta x$)(y+$\Delta y$)=xy+$\underbrace{y\Delta x+x\Delta y+\Delta x\Delta y}_{additive correction}$}\\
+\[{(x+\Delta x)(y+\Delta y)=xy+\underbrace{y\Delta x+x\Delta y+\Delta x\Delta y}_{additive correction}}\eqno{(5.5)}\]\\
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem  5.8 Rectangle picture}\\
+
+{Draw a rectangle representing the expansion}
+\[{(x+\Delta x)(y+\Delta y)=xy+y\Delta x+x\Delta y+\Delta x\Delta y}\eqno{(5.6)}\]\\
+\end{minipage}}\\
+
+{When the absolute changes $\Delta x$ and $\Delta y$ are small (x$\ll\Delta x\,and\, y\ll\Delta y$),the correction simplifies to x$\Delta y$+y$\Delta x$ , but even so it is hard to remember because it has many plausible but incorrect alternatives.  For example, it could  plausibly  contain  terms  such  as $\Delta x\Delta y$ x$\Delta x$ ,or y$\Delta y$.   The  extent}
+\end{document}\documentclass{book} 
+
+%% Language and font encodings 
+\usepackage[english]{babel} 
+\usepackage[utf8x]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{fancyhdr} 
+\usepackage[a4paper,top=3cm,bottom=2cm,left=4cm,right=2cm,marginparwidth=1.95cm]{geometry} 
+\usepackage{xcolor}  
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage[colorinlistoftodos]{todonotes} 
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{setspace} 
+
+\begin{document} 
+\pagestyle{fancy}  
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\Huge\textbf{5}
+
+\Huge\textbf{Taking out the big part}\\
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textrm{5.1  Multiplication using one and few}
+
+{5.2  Fractional changes and low-entropy expressions}
+
+{5.3  Fractional changes with general exponents}
+
+{5.4  Successive approximation: How deep is the well?}
+
+{5.5  Daunting trigonometric integral}
+
+{5.6 \textit{Summary and further problems}}
+\end{minipage}}\\
+
+\Large\textrm{In almost every quantitative problem,  the analysis simplifies when you
+follow the proverbial advice of doing first things first.  First approximate
+and understand the most important effect—the big part—then refine your
+analysis and understanding.  This procedure of successive approximation
+or “taking out the big part” generates meaningful, memorable, and usable
+expressions.  The following examples introduce the related idea of low-
+entropy expressions (Section 5.2) and analyze mental multiplication (Section 5.1),  exponentiation (Section 5.3),  quadratic equations (Section 5.4),
+and a difficult trigonometric integral (Section 5.5).}
+\\ 
+
+\Large\textbf{5.1  Multiplication using one and few}
+
+{The first illustration is a method of mental multiplication suited to rough,
+back-of-the-envelope estimates.  The particular calculation is the storage
+capacity of a data CD-ROM. A data CD-ROM has the same format and
+storage capacity as a music CD, whose capacity can be estimated as the
+product of three factors:}\\
+
+\[\underbrace{1hr\times\frac{3600s}{1hr}}_{playing time}\times\underbrace{\frac{4.4\times10^{4}samples}{1s}}_{sample rate}\times{2 channels}\times\underbrace{\frac{16 bits}{1 sample}}_{sample size}\eqno{(5.1)}\]
+
+
+
+
+%****************************************************************************************** 
+%****************************************************************************************** 
+\newpage 
+\pagestyle{fancy} 
+% этим мы убеждаемся, что заголовки глав и 
+% разделов используют нижний регистр. 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\fancyhead[LE]{\large \textsl {\textbf{78}}} 
+\fancyhead[RE]{\large \textsl{5 Taking out the big part}} 
+
+\large\textrm{(In the sample-size factor, the two channels are for stereophonic sound.)}
+\\ 
+ 
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem 5.31  Sample rate} \\ 
+\textmd{Look  up  the  Shannon–Nyquist  sampling  theorem  [22],  and  explain  why  the sample rate (the rate at which the sound pressure is measured) is roughly
+40kHz.}\\
+
+\large\textbf{Problem  5.2 Bits per sample} \\
+\large\textmd{Because $2^{16}\sim10^{5}$,a 16-bit  sample—as  chosen  for  the  CD  format—requires electronics  accurate  to  roughly 0.001\%.  Why  didn’t  the  designers  of  the  CD format choose a much larger sample size, say 32 bits (per channel)?}\\
+
+\large\textbf{Problem 5.3 Checking units}
+\textmd{Check that all the units in the estimate divide out—except for the desired units of bits.}
+\end{minipage}}\\
+
+{Back-of-the-envelope calculations use rough estimates such as the playing
+time and neglect important factors such as the bits devoted to error detec-
+tion and correction.  In this and many other estimates, multiplication with
+3 decimal places of accuracy would be overkill.  An approximate analysis
+needs an approximate method of calculation.}\\
+
+$\triangleright\large\textsl{What is the data capacity to within a factor of 2 ?}\\$
+
+{The units (the biggest part!)  are bits (Problem 5.3), and the three numeri-cal factors contribute {3600$\times4.4\times10^{4}\times32$.  To estimate the product, split it into a big part and a correction.}\\
+\textsl{The  big  part:} 
+{The  most  important  factor  in  a  back-of-the-envelope  product usually comes from the powers of 10, so evaluate this big part first: 3600 contributes  three  powers  of 10,4.4$\times10^{4}$ contributes  four,  and 32 contributes one.  The eight powers of 10 produce a factor of $10^{8}$.}\\
+\textsl{The correction:}
+{After taking out the big part, the remaining part is a correction factor of 3.6$\times4.4\times3.2$ .  This product too is simplified by taking out its big part.  Round each factor to the closest number among three choices: 1,few,or 10. The invented number few lies midway between 1 and 10:It is the geometric mean of 1 and 10,so (few)2=10 and few$\approx3$.In the product 3.6$\times4.4\times3.2$, each factor rounds to few, so 3.6$\times4.4\times3.2\approx(few)^{3}$ or roughly 30}\\
+
+{The units, the powers of 10, and the correction factor combine to give}\\
+
+\[capacity\sim10^{8}\times30 bits=3\times10^{9} bits.\eqno{(5.2)}\]
+
+%************************************************************************************* 
+%*********************************************************************************** 
+\newpage 
+\pagestyle{fancy} 
+% этим мы убеждаемся, что заголовки глав и 
+% разделов используют нижний регистр. 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\fancyhead[RO]{\large \textsl {\textbf{79}}} 
+\fancyhead[LO]{\large \textsl{5.2 Fractional changes and low-entropy expressions}} 
+\Large\textrm{This estimate is within a factor of 2 of the exact product (Problem 5.4), which is itself close to the actual capacity of 5.6$\times10^{9}$
+bits.}\\ 
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem  5.4 Underestimate or overestimate?}\\
+\large\textmd{Does 3$\times10^{9}$ overestimate or underestimate 3600$\times4.4\times10^{4}\times32$? Check your reasoning by computing the exact product.}\\
+
+\large\textbf{Problem  5.5  More practice}\\
+\large\textmd{Use the one-or-few method of multiplication to perform the following calculations mentally; then compare the approximate and actual products.}\\
+
+\large\textmd{a.  161$\times294\times280\times$438.  The actual product is roughly 5.8$\times10^{9}$.}\\
+
+\large\textmd{b.  Earth’s surface area A=4${\pi}$$R^{2}$, where the radius is R$\sim6\times10^{6}$m.  The actual surface area is roughly 5.1$\times10^{14}m^{2}$.}
+\end{minipage}}\\
+
+\Large\textbf{5.2 Fractional changes and low-entropy expressions}\\
+
+{Using the one-or-few method for mental multiplication is fast.  For example, 3.15$\times7.21$ quickly becomes few$\times10^{1}\sim$30 , which is within 50\% of the exact product 22.7115 .  To get a more accurate estimate, round 3.15 to 3 and 7.21 to 7 . Their product 21 is in error by only 8\%.  To reduce the error further, one could split 3.15$\times7.21$ into a big part and an additive correction.  This decomposition produces}
+\[{(3+0.15)(7+0.21)=}\underbrace{3\times7}_{big part}+\underbrace{0.15\times7+3\times0.21+0.15\times0.21}_{additive correction}{.}\eqno{(5.3)}\]\\
+{The approach is sound, but the literal application of taking out the big part  produces  a  messy  correction  that  is  hard  to  remember  and  understand.   Slightly  modified,  however,  taking  out  the  big  part  provides  a clean  and  intuitive  correction.   As  gravy,  developing  the  improved  correction introduces two important street-fighting ideas:  fractional changes (Section 5.2.1) and low-entropy expressions (Section 5.2.2).  The improved correction will then, as a first of many uses, help us estimate the energy saved by highway speed limits (Section 5.2.3).}\\
+
+\large\textbf{5.2.1 Fractional changes}\\
+{The hygienic alternative to an additive correction is to split the product into a big part and a \textit{multiplicative} correction:}
+
+%************************************************************************************* 
+%*********************************************************************************** 
+\newpage 
+\pagestyle{fancy} 
+% этим мы убеждаемся, что заголовки глав и 
+% разделов используют нижний регистр. 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\fancyhead[LE]{\large \textsl {\textbf{80}}} 
+\fancyhead[RE]{\large \textsl{5 Taking out the big part}} 
+
+\[{3.15\times7.21=}\underbrace{3\times7}_{big part}\times\underbrace{(1+0.05)\times(1+0.03)}_{correction factor}\eqno{(5.3)}\]\\
+$\triangleright\large\textsl{Can you find a picture for the correction factor?}\\$
+
+\large\textrm{The correction factor is the area of a rectangle with}\\ 
+{width 1+0.05 and height 1+0.03.  The rectangle}\\ 
+{contains one subrectangle for each term in the ex-}\\
+{pansion of (1+0.05)$\times(1+0.03)$. Their combined}\\ 
+{area of roughly 1+0.05+0.03 represents an 8 \%}\\ 
+{fractional increase over the big part. The big part}\\ 
+{is 21 , and 8 \%of it is 1.68 ,so 3.15$\times7.21$=22.68 ,}\\ 
+{which is within 0.14 \% of the exact product.}\\
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem 5.6 Picture for the fractional error} \\
+
+{What is the pictorial explanation for the fractional error of roughly 0.15\%?}\\
+
+\large\textbf{Problem  5.7 Try it yourself}\\
+
+{Estimate 245$\times$42 by rounding each factor to a nearby multiple of 10, and compare this big part with the exact product.  Then draw a rectangle for the correction factor, estimate its area, and correct the big part.}
+\end{minipage}}\\
+
+\large\textbf{5.2.2  Low-entropy expressions}\\
+
+{The correction to 3.15$\times7.21$ was complicated as an absolute or additive change but simple as a fractional change.  This contrast is general.  Using the additive correction, a two-factor product becomes}\\
+
+\[{(x+\Delta x)(y+\Delta y)=xy+\underbrace{y\Delta x+x\Delta y+\Delta x\Delta y}_{additive correction}}\eqno{(5.5)}\]\\
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem  5.8 Rectangle picture}\\
+
+{Draw a rectangle representing the expansion}
+\[{(x+\Delta x)(y+\Delta y)=xy+y\Delta x+x\Delta y+\Delta x\Delta y}\eqno{(5.6)}\]\\
+\end{minipage}}\\
+
+{When the absolute changes $\Delta x$ and $\Delta y$ are small (x$\ll\Delta x\,and\, y\ll\Delta y$),the correction simplifies to x$\Delta y$+y$\Delta x$ , but even so it is hard to remember because it has many plausible but incorrect alternatives.  For example, it could  plausibly  contain  terms  such  as $\Delta x\Delta y$ x$\Delta x$ ,or y$\Delta y$.   The  extent}
+\end{document}\documentclass{book} 
+
+%% Language and font encodings 
+\usepackage[english]{babel} 
+\usepackage[utf8x]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{fancyhdr} 
+\usepackage[a4paper,top=3cm,bottom=2cm,left=4cm,right=2cm,marginparwidth=1.95cm]{geometry} 
+\usepackage{xcolor}  
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage[colorinlistoftodos]{todonotes} 
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{setspace} 
+
+\begin{document} 
+\pagestyle{fancy}  
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\Huge\textbf{5}
+
+\Huge\textbf{Taking out the big part}\\
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textrm{5.1  Multiplication using one and few}
+
+{5.2  Fractional changes and low-entropy expressions}
+
+{5.3  Fractional changes with general exponents}
+
+{5.4  Successive approximation: How deep is the well?}
+
+{5.5  Daunting trigonometric integral}
+
+{5.6 \textit{Summary and further problems}}
+\end{minipage}}\\
+
+\Large\textrm{In almost every quantitative problem,  the analysis simplifies when you
+follow the proverbial advice of doing first things first.  First approximate
+and understand the most important effect—the big part—then refine your
+analysis and understanding.  This procedure of successive approximation
+or “taking out the big part” generates meaningful, memorable, and usable
+expressions.  The following examples introduce the related idea of low-
+entropy expressions (Section 5.2) and analyze mental multiplication (Section 5.1),  exponentiation (Section 5.3),  quadratic equations (Section 5.4),
+and a difficult trigonometric integral (Section 5.5).}
+\\ 
+
+\Large\textbf{5.1  Multiplication using one and few}
+
+{The first illustration is a method of mental multiplication suited to rough,
+back-of-the-envelope estimates.  The particular calculation is the storage
+capacity of a data CD-ROM. A data CD-ROM has the same format and
+storage capacity as a music CD, whose capacity can be estimated as the
+product of three factors:}\\
+
+\[\underbrace{1hr\times\frac{3600s}{1hr}}_{playing time}\times\underbrace{\frac{4.4\times10^{4}samples}{1s}}_{sample rate}\times{2 channels}\times\underbrace{\frac{16 bits}{1 sample}}_{sample size}\eqno{(5.1)}\]
+
+
+
+
+%****************************************************************************************** 
+%****************************************************************************************** 
+\newpage 
+\pagestyle{fancy} 
+% этим мы убеждаемся, что заголовки глав и 
+% разделов используют нижний регистр. 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\fancyhead[LE]{\large \textsl {\textbf{78}}} 
+\fancyhead[RE]{\large \textsl{5 Taking out the big part}} 
+
+\large\textrm{(In the sample-size factor, the two channels are for stereophonic sound.)}
+\\ 
+ 
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem 5.31  Sample rate} \\ 
+\textmd{Look  up  the  Shannon–Nyquist  sampling  theorem  [22],  and  explain  why  the sample rate (the rate at which the sound pressure is measured) is roughly
+40kHz.}\\
+
+\large\textbf{Problem  5.2 Bits per sample} \\
+\large\textmd{Because $2^{16}\sim10^{5}$,a 16-bit  sample—as  chosen  for  the  CD  format—requires electronics  accurate  to  roughly 0.001\%.  Why  didn’t  the  designers  of  the  CD format choose a much larger sample size, say 32 bits (per channel)?}\\
+
+\large\textbf{Problem 5.3 Checking units}
+\textmd{Check that all the units in the estimate divide out—except for the desired units of bits.}
+\end{minipage}}\\
+
+{Back-of-the-envelope calculations use rough estimates such as the playing
+time and neglect important factors such as the bits devoted to error detec-
+tion and correction.  In this and many other estimates, multiplication with
+3 decimal places of accuracy would be overkill.  An approximate analysis
+needs an approximate method of calculation.}\\
+
+$\triangleright\large\textsl{What is the data capacity to within a factor of 2 ?}\\$
+
+{The units (the biggest part!)  are bits (Problem 5.3), and the three numeri-cal factors contribute {3600$\times4.4\times10^{4}\times32$.  To estimate the product, split it into a big part and a correction.}\\
+\textsl{The  big  part:} 
+{The  most  important  factor  in  a  back-of-the-envelope  product usually comes from the powers of 10, so evaluate this big part first: 3600 contributes  three  powers  of 10,4.4$\times10^{4}$ contributes  four,  and 32 contributes one.  The eight powers of 10 produce a factor of $10^{8}$.}\\
+\textsl{The correction:}
+{After taking out the big part, the remaining part is a correction factor of 3.6$\times4.4\times3.2$ .  This product too is simplified by taking out its big part.  Round each factor to the closest number among three choices: 1,few,or 10. The invented number few lies midway between 1 and 10:It is the geometric mean of 1 and 10,so (few)2=10 and few$\approx3$.In the product 3.6$\times4.4\times3.2$, each factor rounds to few, so 3.6$\times4.4\times3.2\approx(few)^{3}$ or roughly 30}\\
+
+{The units, the powers of 10, and the correction factor combine to give}\\
+
+\[capacity\sim10^{8}\times30 bits=3\times10^{9} bits.\eqno{(5.2)}\]
+
+%************************************************************************************* 
+%*********************************************************************************** 
+\newpage 
+\pagestyle{fancy} 
+% этим мы убеждаемся, что заголовки глав и 
+% разделов используют нижний регистр. 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\fancyhead[RO]{\large \textsl {\textbf{79}}} 
+\fancyhead[LO]{\large \textsl{5.2 Fractional changes and low-entropy expressions}} 
+\Large\textrm{This estimate is within a factor of 2 of the exact product (Problem 5.4), which is itself close to the actual capacity of 5.6$\times10^{9}$
+bits.}\\ 
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem  5.4 Underestimate or overestimate?}\\
+\large\textmd{Does 3$\times10^{9}$ overestimate or underestimate 3600$\times4.4\times10^{4}\times32$? Check your reasoning by computing the exact product.}\\
+
+\large\textbf{Problem  5.5  More practice}\\
+\large\textmd{Use the one-or-few method of multiplication to perform the following calculations mentally; then compare the approximate and actual products.}\\
+
+\large\textmd{a.  161$\times294\times280\times$438.  The actual product is roughly 5.8$\times10^{9}$.}\\
+
+\large\textmd{b.  Earth’s surface area A=4${\pi}$$R^{2}$, where the radius is R$\sim6\times10^{6}$m.  The actual surface area is roughly 5.1$\times10^{14}m^{2}$.}
+\end{minipage}}\\
+
+\Large\textbf{5.2 Fractional changes and low-entropy expressions}\\
+
+{Using the one-or-few method for mental multiplication is fast.  For example, 3.15$\times7.21$ quickly becomes few$\times10^{1}\sim$30 , which is within 50\% of the exact product 22.7115 .  To get a more accurate estimate, round 3.15 to 3 and 7.21 to 7 . Their product 21 is in error by only 8\%.  To reduce the error further, one could split 3.15$\times7.21$ into a big part and an additive correction.  This decomposition produces}
+\[{(3+0.15)(7+0.21)=}\underbrace{3\times7}_{big part}+\underbrace{0.15\times7+3\times0.21+0.15\times0.21}_{additive correction}{.}\eqno{(5.3)}\]\\
+{The approach is sound, but the literal application of taking out the big part  produces  a  messy  correction  that  is  hard  to  remember  and  understand.   Slightly  modified,  however,  taking  out  the  big  part  provides  a clean  and  intuitive  correction.   As  gravy,  developing  the  improved  correction introduces two important street-fighting ideas:  fractional changes (Section 5.2.1) and low-entropy expressions (Section 5.2.2).  The improved correction will then, as a first of many uses, help us estimate the energy saved by highway speed limits (Section 5.2.3).}\\
+
+\large\textbf{5.2.1 Fractional changes}\\
+{The hygienic alternative to an additive correction is to split the product into a big part and a \textit{multiplicative} correction:}
+
+%************************************************************************************* 
+%*********************************************************************************** 
+\newpage 
+\pagestyle{fancy} 
+% этим мы убеждаемся, что заголовки глав и 
+% разделов используют нижний регистр. 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{} % убираем текущие установки для колонтитулов 
+
+\fancyhead[LE]{\large \textsl {\textbf{80}}} 
+\fancyhead[RE]{\large \textsl{5 Taking out the big part}} 
+
+\[{3.15\times7.21=}\underbrace{3\times7}_{big part}\times\underbrace{(1+0.05)\times(1+0.03)}_{correction factor}\eqno{(5.3)}\]\\
+$\triangleright\large\textsl{Can you find a picture for the correction factor?}\\$
+
+\large\textrm{The correction factor is the area of a rectangle with}\\ 
+{width 1+0.05 and height 1+0.03.  The rectangle}\\ 
+{contains one subrectangle for each term in the ex-}\\
+{pansion of (1+0.05)$\times(1+0.03)$. Their combined}\\ 
+{area of roughly 1+0.05+0.03 represents an 8 \%}\\ 
+{fractional increase over the big part. The big part}\\ 
+{is 21 , and 8 \%of it is 1.68 ,so 3.15$\times7.21$=22.68 ,}\\ 
+{which is within 0.14 \% of the exact product.}\\
+
+\colorbox{lightgray}{
+\begin{minipage}{\textwidth}
+\large\textbf{Problem 5.6 Picture for the fractional error} \\
+
+{What is the pictorial explanation for the fractional error of roughly 0.15\%?}\\
+
+\large\textbf{Problem  5.7 Try it yourself}\\
+
+{Estimate 245$\times$42 by rounding each factor to a nearby multiple of 10, and compare this big part with the exact product.  Then draw a rectangle for the correction factor, estimate its area, and correct the big part.}
+\end{minipage}}\\
+
+\large\textbf{5.2.2  Low-entropy expressions}\\
+
+{The correction to 3.15$\times7.21$ was complicated as an absolute or additive change but simple as a fractional change.  This contrast is general.  Using the additive correction, a two-factor product becomes}\\
+
+\[{(x+\Delta x)(y+\Delta y)=xy+\underbrace{y\Delta x+x\Delta y+\Delta x\Delta y}_{additive correction}}\eqno{(5.5)}\]\\
 
 \colorbox{lightgray}{
 \begin{minipage}{\textwidth}
