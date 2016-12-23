@@ -146,16 +146,9 @@ while True:
         while t3 > 0:
             t2 = v * math.sin(m) * t1 - (g * t1 ** 2) / 2
             t1 += 0.01
-        t = np.arange(0, t1, 0.01)
-        t3 = (v * math.sin(m) * t - (g * t ** 2) / 2)
-        t4 = v * math.cos(m) * t
+        t = np.arange(0, t1, 0.01);  t3 = (v * math.sin(m) * t - (g * t ** 2) / 2); t4 = v * math.cos(m) * t
         plt.plot(t3, t4)
-        plt.axis('equal')
-        plt.xlabel(r'$S$')
-        plt.ylabel(r'$H$')
-        plt.title(r'$Mars$')
-        plt.grid(True)
-        plt.show()
+        plt.axis('equal'); plt.xlabel(r'$S$'); plt.ylabel(r'$H$'); plt.title(r'$Mars$'); plt.grid(True); plt.show();
 
     else:
         print("Please check the correctness of the entered commands")
