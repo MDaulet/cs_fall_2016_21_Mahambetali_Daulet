@@ -1,14 +1,11 @@
 #include <stdio.h>
 
-
-int main()
+int main(int argc, char*argv[])
 {
-	setlocale(0, "russian");
-	float a, b, x, y, d, k;
-	printf("Введите значения сопротивлений в виде a+bi x+yi: ");
-	scanf("%f+%fi %f+%fi", &a, &b, &x, &y);
-	d = (a*a*x + a*x*x + a*y*y + b*b*x) / ((a + x)*(a + x) + (b + y)*(b + y));
-	k = (a*a*y + b*b*y + b*x*x + b*y*y) / ((a + x)*(a + x) + (b + y)*(b + y));
-	printf("Ответ: %.4f+%.4fi", d, k);
+	float a = 0.0, b = 0.0, c = 0.0, d = 0.0;
+	printf("Расчет мнимого сопротивления.\n Введите сопротивление в виде a+bi,c+di : <a> <b> <c> <d>\n ");
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+	printf("%.4f+i*%.4f", (c*c*a + c*a*a + c*b*b + a*d*d) / ((c + a)*(c + a) + (d + b)*(d + b)), 
+						(c*c*b + a*a*d + d*d*b + d*b*b) / ((c + a)*(c + a) + (d + b)*(d + b)));
 	return 0;
 }
